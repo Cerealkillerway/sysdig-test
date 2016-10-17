@@ -1,8 +1,19 @@
 {
   "predef": [
-    "document",
-    "window",
-    "-Promise"
+      "Materialize",
+      "document",
+      "window",
+      "-Promise",
+      "Ember",
+      "$",
+      "_",
+      "moment",
+      "loadImage",
+      "rangy",
+      "Stripe",
+      "Promise",
+      "heap",
+      "$clamp"
   ],
   "browser": true,
   "boss": true,
@@ -28,5 +39,5 @@
   "white": false,
   "eqnull": true,
   "esversion": 6,
-  "unused": true
+  "unused": false
 }

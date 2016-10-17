@@ -1,0 +1,85 @@
+<div class="container grey darken-2">
+    <div class="card-panel grey lighten-1 center-align">
+        <h3>Sysdig test</h3>
+    </div>
+
+    <div class="center-align grey-text text-lighten-4 actionWrapper">
+        Test application for displaying events... <a class="btn waves-effect waves-light" {{action "refresh"}}>Refresh</a>
+    </div>
+</div>
+
+<div class="tableContainer">
+    <table class="responsive-table striped highlight grey lightne-3">
+        <thead>
+            <tr>
+                <th data-field="id">
+                    Id
+                </th>
+                <th data-field="version">
+                    Version
+                </th>
+                <th data-field="createdOn">
+                    Created on
+                </th>
+                <th data-field="modifiedOn">
+                    Modified on
+                </th>
+                <th data-field="name">
+                    Name
+                </th>
+                <th data-field="description">
+                    Description
+                </th>
+                <th data-field="severity">
+                    Severity
+                </th>
+                <th data-field="filter">
+                    Filter
+                </th>
+                <th data-field="timestamp">
+                    Timestamp
+                </th>
+                <th data-field="tags">
+                    Tags
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each model as |event|}}
+                <tr>
+                    <td>
+                        {{event.id}}
+                    </td>
+                    <td>
+                        {{event.version}}
+                    </td>
+                    <td>
+                        {{event.createdOn}}
+                    </td>
+                    <td>
+                        {{event.modifiedOn}}
+                    </td>
+                    <td>
+                        {{event.name}}
+                    </td>
+                    <td class="truncate">
+                        {{event.description}}
+                    </td>
+                    <td>
+                        {{event.severity}}
+                    </td>
+                    <td>
+                        {{event.filter}}
+                    </td>
+                    <td>
+                        {{event.timestamp}}
+                    </td>
+                    <td>
+                        {{event.tags}}
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

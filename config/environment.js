@@ -1,46 +1,45 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
-  var ENV = {
-    modulePrefix: 'sysdig-test',
-    environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
-    EmberENV: {
-      FEATURES: {
-        // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
-      }
-    },
+    var ENV = {
+        modulePrefix: 'sysdig-test',
+        environment: environment,
+        rootURL: '/',
+        locationType: 'auto',
+        EmberENV: {
+            FEATURES: {}
+        },
 
-    APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+        APP: {
+            Configuration: {
+                "version": "v0.0.0",
+                "siteName": "Sysdig-test",
+                "API": {
+                    "Authorization": "Bearer 8aef9517-3070-4090-b55e-83296cee8cd1",
+                    "baseUrl": "https://app-staging.sysdigcloud.com/api"
+                }
+            }
+        }
+    };
+
+
+    if (environment === 'development') {
+        ENV.APP.DEBUG = true;   // enable internal webapp logger
     }
-  };
 
-  if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-  }
+    if (environment === 'test') {
+        // Testem prefers this...
+        ENV.locationType = 'none';
 
-  if (environment === 'test') {
-    // Testem prefers this...
-    ENV.locationType = 'none';
+        // keep test console output quieter
+        ENV.APP.LOG_ACTIVE_GENERATION = false;
+        ENV.APP.LOG_VIEW_LOOKUPS = false;
 
-    // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false;
-    ENV.APP.LOG_VIEW_LOOKUPS = false;
+        ENV.APP.rootElement = '#ember-testing';
+        ENV.APP.DEBUG = true;   // enable internal webapp logger
+    }
 
-    ENV.APP.rootElement = '#ember-testing';
-  }
+    if (environment === 'production') {}
 
-  if (environment === 'production') {
-
-  }
-
-  return ENV;
+    return ENV;
 };

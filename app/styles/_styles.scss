@@ -1,0 +1,23 @@
+body {
+    background-color: $backgroundColor;
+}
+
+.actionWrapper {
+    padding-bottom: 15px;
+}
+
+table {
+    thead {
+        th {
+            border-radius: 0;
+        }
+    }
+}
+
+.tableContainer {
+    margin: 15px auto 30px auto;
+
+    td {
+        max-width: 100px;
+    }
+}
