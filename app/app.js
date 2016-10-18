@@ -16,6 +16,12 @@ App = Ember.Application.extend({
     Resolver
 });
 
+App.Settings = {
+    events: {
+        total: 0
+    }
+};
+
 Ember.Application.initializer({
     name: 'confLoader',
 

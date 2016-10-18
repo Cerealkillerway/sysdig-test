@@ -10,5 +10,5 @@ export default Model.extend({
     severity: attr('number'),
     filter: attr('string'),
     timestamp: attr('date'),
-    tags: attr('string')
+    tags: attr('string'),
 });

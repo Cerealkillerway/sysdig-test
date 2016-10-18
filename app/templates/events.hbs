@@ -1,12 +1,7 @@
-<div class="container grey darken-2">
-    <div class="card-panel grey lighten-1 center-align">
-        <h3>Sysdig test</h3>
-    </div>
-
-    <div class="center-align grey-text text-lighten-4 actionWrapper">
-        Test application for displaying events... <a class="btn waves-effect waves-light" {{action "refresh"}}>Refresh</a>
-    </div>
+<div class="center-align">
+    <a class="btn waves-effect waves-light" {{action "refresh"}}>Refresh</a>
 </div>
+{{material-pagination pages=model.pages active=page changePage="changePage"}}
 
 <div class="tableContainer">
     <table class="responsive-table striped highlight grey lightne-3">
@@ -63,15 +58,19 @@
                     <td>
                         {{event.name}}
                     </td>
-                    <td class="truncate">
-                        {{event.description}}
-                    </td>
+                    {{#material-tooltip}}
+                        <td class="truncate tooltipped" data-position="top" data-tooltip="{{event.description}}">
+                            {{event.description}}
+                        </td>
+                    {{/material-tooltip}}
                     <td>
                         {{event.severity}}
                     </td>
-                    <td>
-                        {{event.filter}}
-                    </td>
+                    {{#material-tooltip}}
+                        <td class="truncate tooltipped" data-position="top" data-tooltip="{{event.filter}}">
+                            {{event.filter}}
+                        </td>
+                    {{/material-tooltip}}
                     <td>
                         {{event.timestamp}}
                     </td>
@@ -83,3 +82,5 @@
         </tbody>
     </table>
 </div>
+
+{{material-pagination pages=model.pages active=page changePage="changePage"}}

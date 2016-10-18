@@ -1,0 +1,13 @@
+<ul class="pagination">
+    <li class="pointer">
+        <a {{action "changePage" "prev"}}><i class="material-icons">chevron_left</i></a>
+    </li>
+    {{#each this.pagesArray as |page index|}}
+        <li class="waves-effect {{page}}">
+            <a {{action "changePage" index}}>{{increment index}}</a>
+        </li>
+    {{/each}}
+    <li class="pointer">
+        <a {{action "changePage" "next"}}><i class="material-icons">chevron_right</i></a>
+    </li>
+</ul>

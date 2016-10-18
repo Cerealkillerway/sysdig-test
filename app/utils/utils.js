@@ -8,6 +8,7 @@ let Utils = {
         var types = {
             appInfo: 'background-color: #333; color: #eee;',
             adapterInfo: 'background-color: #4a148c; color: #eee;',
+            appComponentInfo: 'background-color: #c6ff00; color: #222;',
 
             appSuccess: 'background-color: #4caf50; color: #eee;',
             appError: 'background-color: #f00; color: #eee;',
@@ -31,31 +32,8 @@ let Utils = {
     },
 
 
-    normalize: {
-        normalizeEvent: function(event, type) {
-            let result = {
-                type: type.modelName,
-                attributes: {}
-            };
-
-            if (event.id) {
-                result.id = event.id;
-                delete event.id;
-            }
-
-            if (event.tags) {
-                let tags = [];
-
-                _.each(event.tags, function(tagValue, tagName) {
-                    tags.push(tagValue + ': ' + tagName);
-                });
-                event.tags = tags.join(', ');
-            }
-
-            result.attributes = event;
-
-            return result;
-        }
+    range: function(i) {
+        return i ? Utils.range(i - 1).concat(i) : [];
     }
 };
 

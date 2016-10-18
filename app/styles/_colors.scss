@@ -1,5 +1,7 @@
 $backgroundColor: color('grey', 'darken-4') !default;
+$sysdigRed: #ee5a4c;
 $firstColor: #1B1B1E !default;
+$secondColor: color('grey', 'lighten-5');
 
 
 // scrollbars
@@ -20,7 +22,7 @@ $firstColor: #1B1B1E !default;
 
 table {
     thead {
-        background-color: color('deep-purple', 'darken-3');
+        background-color: $sysdigRed;
         color: color('grey', 'lighten-3');
         border-bottom: solid 2px #111;
     }
@@ -29,4 +31,16 @@ table {
 table.highlight > tbody > tr:hover {
     background-color: color('teal', 'lighten-1');
     color: color('grey', 'lighten-3');
+}
+
+.pagination {
+    .active {
+        background-color: $sysdigRed !important;
+    }
+}
+
+footer {
+    &.page-footer {
+        background-color: $sysdigRed;
+    }
 }
