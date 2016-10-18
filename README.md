@@ -17,7 +17,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone git@bitbucket.org:cerealkillerway/sysdig-test.git` this repository
+* `git clone git@github.com:Cerealkillerway/sysdig-test.git` this repository
 * `cd sysdig-test`
 * `npm install`
 * `bower install`
