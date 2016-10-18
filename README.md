@@ -1,5 +1,5 @@
 # Sysdig-test
-![Sysdig logo](public/assets/img/icons/sysdig-logo.svg)
+![Sysdig logo](http://www.sysdig.org/assets/img/sysdig_white.svg)
 
 This is Sysdig test application to display events in a table with timed reload.
 
