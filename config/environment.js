@@ -4,6 +4,7 @@ module.exports = function(environment) {
     var ENV = {
         modulePrefix: 'sysdig-test',
         environment: environment,
+        //rootURL: '/sysdig/',
         rootURL: '/',
         locationType: 'auto',
         EmberENV: {
